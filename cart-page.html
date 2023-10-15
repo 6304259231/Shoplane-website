@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoplane</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+       
+        * {
+            font-family: 'Open Sans', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .nav-main {
+            box-shadow: 0px 5px 3px grey;
+            position: sticky;
+            top : 0px;
+            z-index: 20;
+        }
+
+        .nav-logo b,
+        span {
+            font-size: 35px;
+        }
+
+        #title1-logo {
+            margin-left: 50px;
+        }
+
+        .nav-items {
+            font-size: 20px;
+            margin-left: 30px;
+        }
+
+        #icon-section {
+            margin: 20px;
+        }
+
+        
+        footer {
+            width: 100%;
+            background-color: #1c1b1e;
+            display: flex;
+            justify-content: center;
+            padding: 4% 8%;
+            margin-top: 50px;
+            box-shadow: 5px 2px 2px grey;
+            border-radius: 5px;
+        }
+
+        footer > div {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        .footer-heading {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin-top: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: rgb(0, 75, 145);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .h1 {
+            height: 50px;
+            width: 150px;
+            background: linear-gradient(to right, gray, rgb(12, 12, 11));
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-size: 35px;
+            margin-left: 40px;
+            border-radius: 50%;
+            color: tomato;
+            margin: 40px;
+        }
+
+        .item-nav a {
+            color: rgba(81, 6, 201, 0.9);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+        }
+
+        .item-nav a:hover {
+            text-decoration-line: underline;
+            text-decoration-color: crimson;
+        }
+
+        #img-main-sec {
+            height: 650px;
+            min-height: 700px;
+            width: 700px;
+            min-width: 400px;
+        }
+
+        #img-main-sec img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        #main-container {
+            margin: 30px 10px 40px 60px;
+            display: flex;
+        }
+
+        #product-sec {
+            margin-left: 40px;
+        }
+
+        .products-details {
+            margin: 20px;
+        }
+
+        #s-img-sec img {
+            height: 150px;
+            min-height: 150px;
+            width: 120px;
+            margin: 8px;
+        }
+
+        #s-img-sec {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        #product-sec h1 {
+            font-weight: 300;
+            font-size: 40px;
+            letter-spacing: 2px;
+            color: rgb(27, 25, 25);
+            font-family: "Montserrat", sans-serif;
+        }
+
+        #prod-brand,
+        #description,
+        #preview,
+        #price {
+            margin-top: 10px;
+            font-weight: 200;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: rgb(27, 25, 25);
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .para-des {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 300;
+            color: #86939e;
+        }
+
+        #btn-add {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px 20px;
+            letter-spacing: 2px;
+            background-color: #009688;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #spanrs{
+            color: #009688;
+            font-weight: bold;
+        }
+
+        @media (max-width: 668px) {
+            #main-container {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+
+        #preview-sec img,#s-img-sec img {
+            cursor:pointer
+        }
+
+       footer {
+            width: 100%;
+            background-color: #1c1b1e;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 4% 8%;
+}
+footer > div {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.footer-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.footer-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+footer a {
+    color: rgb(0, 75, 145);
+    cursor: pointer;
+    text-decoration: none;
+}
+footer{
+  margin-top: 0px;
+  box-shadow: 5px 2px 2px grey;
+  border-radius: 5px;
+}
+#cart-count{
+    height: 30px;
+    width: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    color: whitesmoke;
+    position: absolute;
+    left: 88%;
+    top : 17px
+   
+}
+.chk-img{
+    width: 100%;
+}
+#check-out-container{
+    border: 2px solid grey;
+    height: 100px;
+    width: 800px;
+}
+#main-section {
+    padding: 2% 8%;
+    box-sizing: border-box;
+}
+
+#main-heading {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 48px;
+}
+
+#content-wrapper {
+    display: flex;
+    justify-content: start;
+}
+
+#content-wrapper > div:first-of-type {
+    width: 50%;
+}
+
+#content-wrapper > div:last-of-type {
+    width: 50%;
+    height: fit-content;
+    margin-top: 48px;
+    margin-left: 3%;
+
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.checkout-card {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    background-color: white;
+    max-width: 600px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.checkout-product-img {
+    width: 80px;
+    min-width: 80px;
+    border-radius: 5px;
+    margin-right: 16px;
+}
+
+.checkout-card h4 {
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.checkout-card p {
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.section-heading {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+#total-amount {
+    color: black;
+    opacity: 0.8;
+    font-size: 24px;
+    font-weight: 800;
+    margin-left: 4px;
+}
+
+#btn-place-order { 
+    background-color: #009688;
+    font-size: 18px;
+    border: 0;
+    cursor: pointer;
+    padding: 18px 36px;
+    border-radius: 6px;
+    margin-top: 36px;
+    font-weight: 600;
+    
+}
+#edyoda-logo {
+    width: 128px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-main">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-logo" href="#"><b id="title1-logo">SHOP</b><span id="title2-logo">LANE</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active nav-items" aria-current="page" href="#">CLOTHING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-items" href="#">ACCESSORIES</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 nav-search" type="search" placeholder="Search" aria-label="Search" size="50"> 
+            </form>
+            <div id="icon-section">
+                <div id="cart-count" class="cart-count">0</div> <!-- New element for cart count -->
+                </div>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </a>
+                </svg>
+                <button class="btn-sigin btn btn-primary" style="margin: 20px;">SIGN IN</button>     
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section id="main-section">
+            <h1 id="main-heading">Checkout</h1>
+
+            <div id="content-wrapper">
+                <div id="card-list">
+                    <h3 class="section-heading">Total Items: <span id="item-count">0</span></h3>
+                </div>
+
+                <div>
+                    <h3 class="section-heading">Total Amount</h3>
+                    <p>Amount: Rs<span id="total-amount">0</span></p>
+                    <button id="btn-place-order"><a href="order_placed.html" style="text-decoration: none;font-size: 18px;">Place Order</a></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="edyoda-logo-section">
+        <img id="edyoda-logo" src="edyoda-projects.png" alt="EdYoda Logo">
+    </div>
+      
+    <footer>
+        <div>
+            <p class="footer-heading">Online Store</p>
+            <a href="#" class="footer-link">Men Clothing</a>
+            <a href="#" class="footer-link">Women Clothing</a>
+            <a href="#" class="footer-link">Men Accessories</a>
+            <a href="#" class="footer-link">Women Accessories</a>
+        </div>
+        <div>
+            <p class="footer-heading">Helpful Links</p>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div>
+            <p class="footer-heading">Partners</p>
+            <a href="#" class="footer-link">Zara</a>
+            <a href="#" class="footer-link">Pantaloons</a>
+            <a href="#" class="footer-link">Levis</a>
+            <a href="#" class="footer-link">UCB</a>
+            <a href="#" class="footer-link">+ Many More</a>
+        </div>
+        <div>
+            <p class="footer-heading">Address</p>
+            <a href="#" class="footer-link">Building 101</a>
+            <a href="#" class="footer-link">Central Avenue</a>
+            <a href="#" class="footer-link">LA - 902722</a>
+            <a href="#" class="footer-link">United States</a>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+
+        function fetchProductData(productId) {
+            const productUrl = `https://5d76bf96515d1a0014085cf9.mockapi.io/product/${productId}`;
+            fetch(productUrl)
+                .then((response) => response.json())
+                .then((productData) => {
+    var card = document.createElement('div');
+    card.classList.add('checkout-card');
+
+    var firstInnerDiv = document.createElement('div');
+    var productImg = document.createElement('img');
+    productImg.classList.add('checkout-product-img');
+    productImg.src = obj.preview;
+    firstInnerDiv.appendChild(productImg);
+
+    var secondInnerDiv = document.createElement('div');
+    var productName = document.createElement('h4');
+    productName.innerHTML = obj.name;
+    var productCount = document.createElement('p');
+    productCount.innerHTML = 'x'+obj.count;
+    var amountLabel = document.createElement('span');
+    amountLabel.innerHTML = 'Amount: Rs ';
+    var amountSpan = document.createElement('span');
+    amountSpan.innerHTML = parseInt(obj.count) * parseInt(obj.price);
+    var productAmount = document.createElement('p');
+    productAmount.appendChild(amountLabel);
+    productAmount.appendChild(amountSpan);
+    secondInnerDiv.appendChild(productName);
+    secondInnerDiv.appendChild(productCount);
+    secondInnerDiv.appendChild(productAmount);
+
+    card.appendChild(firstInnerDiv);
+    card.appendChild(secondInnerDiv);
+
+    return card;
+                })
+}
+
+
+
+var productList = window.localStorage.getItem('product-list');
+productList = productList === null || productList === '' ? [] : productList;
+productList = productList.length > 0 ? JSON.parse(productList) : [];
+
+// console.log(productList);
+var grandTotal = 0;
+for(var i=0; i<productList.length; i++) {
+    $('#card-list').append(ProductCard(productList[i]));
+    var totalForCurrentProduct = parseFloat(productList[i].count) * parseFloat(productList[i].price);
+    grandTotal = grandTotal + totalForCurrentProduct;
+}
+
+$('#item-count').html(productList.length);
+$('#total-amount').html(grandTotal);
+
+$('#btn-place-order').click(function() {
+    var orderItemArr = [];
+    for(var i=0; i<productList.length; i++) {
+        var prodObj = {
+            "id": productList[i].id,
+            "brand": productList[i].brand,
+            "name": productList[i].name,
+            "price": productList[i].price,
+            "preview": productList[i].preview,
+            "isAccessory": productList[i].isAccessory
+        }
+
+        fetchProductData(data)
+
+        orderItemArr.push(prodObj);
+    }
+
+ })
+})
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoplane</title>
+    <link rel="stylesheet" href="shoplane.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+}
+        .nav-main{
+            box-sizing: border-box;
+            box-shadow: 0px 5px 3px grey;
+            position: sticky;
+            top : 0px;
+            z-index: 20;
+        }
+        .nav-logo b,span{
+            font-size: 35px;
+        }
+        #title1-logo{
+            margin-left: 50px;
+        }
+        .nav-items{
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        #icon-section{
+            margin: 20px;
+        }
+        #carousel{
+             margin: 20px;
+
+        }
+
+        .clothing-container,.accessories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: px;
+            justify-content: center;
+            margin: 30px;
+            
+        }
+
+        .product-card {
+            width: 100%;
+            max-width: 19%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px #ccc;
+            border-radius: 5px;
+            
+        }
+        .product-card h3{
+            margin-top: 10px;
+            text-align: left;
+            font-size: 20px;
+            color: rgb(110, 110, 110);
+            padding: 10px;
+            
+        }
+        .product-card p{
+             margin-top: 10px;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: 2px;
+            /* color: #009688; */
+            padding: 10px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            margin-bottom: 0px;
+            
+        }
+        .product-price{
+            margin: 0;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #009688;
+            padding-bottom: 10px;
+           
+        }
+        .product-main-head{
+          margin-left: 3%;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          font-size: 40px;
+          font-weight: 400;
+          letter-spacing: 0.5px;
+          color: rgb(50, 25, 55);
+
+
+        }
+        footer {
+            width: 100%;
+            background-color: #1c1b1e;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 4% 8%;
+}
+footer > div {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.footer-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.footer-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+footer a {
+    color: rgb(0, 75, 145);
+    cursor: pointer;
+    text-decoration: none;
+}
+footer{
+  margin-top: 50px;
+  box-shadow: 5px 2px 2px grey;
+  border-radius: 5px;
+}
+#cart-count{
+    height: 30px;
+    width: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    color: whitesmoke;
+    position: absolute;
+    left: 88%;
+    top : 17px
+   
+}
+#edyoda-logo {
+    width: 128px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-main">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-logo" href="#"><b id="title1-logo">SHOP</b><span id="title2-logo">LANE</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active nav-items" aria-current="page" href="#clothing-section-main">CLOTHING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-items" href="#clothing-section-main">ACCESSORIES</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 nav-search" type="search" placeholder="Search for Clothing & Accessories" aria-label="Search" size="50"> 
+            </form>
+            <div id="icon-section">
+              <div id="cart-count" class="cart-count">0</div> <!-- New element for cart count -->
+                </div>
+                <a href="cart-page.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </a>
+                </svg>
+                <button class="btn-sigin btn btn-primary" style="margin: 20px;">SIGN IN</button>     
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <section id="carousel">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="banner-img1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="banner-img2.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="banner-img3.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </section>
+      <section id="clothing-section-main">
+        <h1 class="product-main-head">Clothing for men & womens</h1>
+        <div id="clothing-container" class="clothing-container">
+
+        </div>
+        <h1 class="product-main-head">Accessories for men & womens</h1>
+        <div id="accessories-container" class="accessories-container">
+           
+        </div>
+
+      </section>
+
+      <div id="edyoda-logo-section">
+        <img id="edyoda-logo" src="edyoda-projects.png" alt="EdYoda Logo">
+      </div>
+
+      <footer>
+        <div>
+            <p class="footer-heading">Online Store</p>
+            <a href="#clothing-section-main" class="footer-link">Men Clothing</a>
+            <a href="#clothing-section-main" class="footer-link">Women Clothing</a>
+            <a href="#clothing-section-main" class="footer-link">Men Accessories</a>
+            <a href="#clothing-section-main" class="footer-link">Women Accessories</a>
+        </div>
+        <div>
+            <p class="footer-heading">Helpful Links</p>
+            <a href="#clothing-section-main" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div>
+            <p class="footer-heading">Partners</p>
+            <a href="#" class="footer-link">Zara</a>
+            <a href="#" class="footer-link">Pantaloons</a>
+            <a href="#" class="footer-link">Levis</a>
+            <a href="#" class="footer-link">UCB</a>
+            <a href="#" class="footer-link">+ Many More</a>
+        </div>
+        <div>
+            <p class="footer-heading">Address</p>
+            <a href="#" class="footer-link">Building 101</a>
+            <a href="#" class="footer-link">Central Avenue</a>
+            <a href="#" class="footer-link">LA - 902722</a>
+            <a href="#" class="footer-link">United States</a>
+        </div>
+    </footer>
+
+    <script src="index.js">
+        // const clothingContainer = document.getElementById("clothing-container");
+        // const accessoriesContainer = document.getElementById("accessories-container");
+
+        // function createProductCard(product) {
+        //     const productCard = document.createElement("div");
+        //     productCard.className = "product-card";
+
+        //     const productLink = document.createElement("a");
+        //     productLink.href = `product-details.html?id=${product.id}`;
+
+        //     const productImage = document.createElement("img");
+        //     productImage.className = "product-image";
+        //     productImage.src = product.preview;
+        //     productImage.alt = product.name;
+
+        //     productLink.appendChild(productImage);
+        //     productCard.appendChild(productLink);
+
+        //     const productName = document.createElement("h3");
+        //     productName.textContent = product.name;
+        //     productCard.appendChild(productName);
+
+        //     const productDescription = document.createElement("p");
+        //     productDescription.textContent = product.brand;
+        //     productCard.appendChild(productDescription);
+
+        //     const productPrice = document.createElement("p");
+        //     productPrice.className = 'product-price';
+        //     productPrice.textContent = `RS ${product.price}`;
+        //     productCard.appendChild(productPrice);
+
+        //     return productCard;
+        // }
+
+        // fetch("https://5d76bf96515d1a0014085cf9.mockapi.io/product")
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         data.forEach(product => {
+        //             const productCard = createProductCard(product);
+        //             if (product.isAccessory) {
+        //                 accessoriesContainer.appendChild(productCard);
+        //             } else {
+        //                 clothingContainer.appendChild(productCard);
+        //             }
+        //         });
+        //     })
+        //     .catch(error => {
+        //         console.error("Error fetching product data: ", error);
+        //     });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoplane</title>
+    <link rel="stylesheet" href="shoplane.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+}
+        .nav-main{
+            box-sizing: border-box;
+            box-shadow: 0px 5px 3px grey;
+            position: sticky;
+            top : 0px;
+            z-index: 20;
+        }
+        .nav-logo b,span{
+            font-size: 35px;
+        }
+        #title1-logo{
+            margin-left: 50px;
+        }
+        .nav-items{
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        #icon-section{
+            margin: 20px;
+        }
+        #carousel{
+             margin: 20px;
+
+        }
+
+        .clothing-container,.accessories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 98x;
+            justify-content: center;
+        }
+
+        .product-card {
+            width: 100%;
+            max-width: 19%;
+            margin-left: 0.5%;
+            margin-right: 0.5%;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px #ccc;
+            border-radius: 5px;
+        }
+
+        .product-image {
+            max-width: 100%;
+        }
+        .product-price{
+            margin: 0;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #009688;
+        }
+        footer {
+            width: 100%;
+            background-color: #1c1b1e;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 4% 8%;
+}
+footer > div {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.footer-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.footer-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+footer a {
+    color: rgb(0, 75, 145);
+    cursor: pointer;
+    text-decoration: none;
+}
+footer{
+  margin-top: 50px;
+  box-shadow: 5px 2px 2px grey;
+  border-radius: 5px;
+}
+#cart-count{
+    height: 30px;
+    width: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    color: whitesmoke;
+    position: absolute;
+    left: 88%;
+    top : 17px
+   
+}
+.bi{
+
+    
+    color: green;
+}
+#main-sec{
+    margin: 50px;
+    min-height: 400px;
+    box-shadow: 7px 7px 2px 5px grey;
+    border: 1px groove grey;
+}
+#main-sec #icon-sec{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40%;
+    padding: 20px;
+}
+#heading-sec{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 3;
+}
+#edyoda-logo {
+    width: 128px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-main">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-logo" href="#"><b id="title1-logo">SHOP</b><span id="title2-logo">LANE</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active nav-items" aria-current="page" href="#">CLOTHING</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-items" href="#">ACCESSORIES</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 nav-search" type="search" placeholder="Search" aria-label="Search" size="50"> 
+            </form>
+            <div id="icon-section">
+              <div id="cart-count" class="cart-count">0</div> <!-- New element for cart count -->
+                </div>
+                <a href="cart-page.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </a>
+                </svg>
+                <button class="btn-sigin btn btn-primary" style="margin: 20px;">SIGN IN</button>     
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+
+      <section id="main-sec">
+        <div id="icon-sec">
+            <svg xmlns="http://www.w3.org/2000/svg" width="156" height="106" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+        </div>  
+        <div id="heading-sec">
+            <h1>Ordrer placed Successfully !!!</h1>
+            <h4>Now you are one of the member of our community  </h4>
+            <p style="font-size: 20px;font-family: Arial, Helvetica, sans-serif;color: grey;">we have sent your order deatils through Email.</p>
+            <i>Happy shopping ! </i>
+        </div>
+      </section>
+
+      <div id="edyoda-logo-section">
+        <img id="edyoda-logo" src="edyoda-projects.png" alt="EdYoda Logo">
+      </div>
+      
+
+      <footer>
+        <div>
+            <p class="footer-heading">Online Store</p>
+            <a href="#" class="footer-link">Men Clothing</a>
+            <a href="#" class="footer-link">Women Clothing</a>
+            <a href="#" class="footer-link">Men Accessories</a>
+            <a href="#" class="footer-link">Women Accessories</a>
+        </div>
+        <div>
+            <p class="footer-heading">Helpful Links</p>
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div>
+            <p class="footer-heading">Partners</p>
+            <a href="#" class="footer-link">Zara</a>
+            <a href="#" class="footer-link">Pantaloons</a>
+            <a href="#" class="footer-link">Levis</a>
+            <a href="#" class="footer-link">UCB</a>
+            <a href="#" class="footer-link">+ Many More</a>
+        </div>
+        <div>
+            <p class="footer-heading">Address</p>
+            <a href="#" class="footer-link">Building 101</a>
+            <a href="#" class="footer-link">Central Avenue</a>
+            <a href="#" class="footer-link">LA - 902722</a>
+            <a href="#" class="footer-link">United States</a>
+        </div>
+    </footer>
+</body>
+</html>
