@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Rubik' , sans-serif;
+}
+body {
+    margin: 0;
+}
+
+@media only screen and (max-width : 740px){
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+@media only screen and (max-width : 540px){
+    #carousel{
+        display: none;
+    }
+    #payment-section{
+        min-width: 90% !important;
+    }
+}

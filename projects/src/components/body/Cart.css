@@ -1,0 +1,146 @@
+
+.product-main-head{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .cart-container {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+  }
+  
+  .cart-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 16px;
+    padding: 16px;
+    display: flex;
+    min-width: 70%;
+    margin: 20px;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 16px;
+  }
+  
+  .cart-item-details {
+    margin-left: 22px;
+    flex-grow: 1;
+  }
+  
+  .cart-item-details h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .cart-item-details p {
+    margin-bottom: 7px;
+    color: #555;
+    display: inline-block;
+  }
+  
+  .cart-item-price {
+    margin-left: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    color: green;
+    margin-bottom: 8px;
+    font-family: monospace;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .quantity-controls button {
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 4px;
+    border-radius: 4px;
+  }
+  
+  .cart-item-total {
+    margin: 22px;
+    font-size: 20px;
+    color: #555;
+  }
+  
+  .cart-total {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin: 10px 40px ;
+  }
+  
+  .cart-total p {
+    display: block;
+    font-family: 'Rubik' , monospace;
+    font-size: 20px;
+    margin: 12px 4px;
+    opacity: 80%;
+  }
+  .cart-total span{
+    font-family: 'Rubik' , sans-serif;
+    
+  }
+  
+  .order-btn{
+    background-color: #4caf50; 
+    color: white; 
+    padding: 10px 15px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-left: 20px;
+    display: inline-block;
+    width: 20%;
+  }
+  
+  @media (max-width: 768px) {
+    .cart-item {
+      margin-left: 0px;
+      min-width: 100%;
+      padding: 8px;
+    }
+    .order-btn{
+      min-width: 80%;
+      margin: 40px auto;
+    }
+    .cart-container{
+      max-width: 100%;
+      margin: 10px 3px;
+      padding: 8px;
+    }
+    .cart-total p {
+      margin-left: 5px;
+    }
+    .cart-item-details {
+      margin-left: 4px;
+      flex-grow: 1;
+      font-size: 14px !important;
+    }
+    #form-section{
+      width:  100% !important;
+    }
+
+    
+    
+  }
+  
