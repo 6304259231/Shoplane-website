@@ -189,18 +189,19 @@ function Register() {
             <label class="form-check-label" for="flexCheckDefault">
               Accept <a href='index.html' style={{ textDecoration: 'none' }}>Terms & Conditions <span style={{ color: 'red', fontSize: '18px', marginLeft: '6px' }}> * </span></a>
             </label>
-            <hr />
+           
           </div>
           <hr />
-          <div style={{ display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'center' }} className='pb-4 mb-4'>
+          <div   className='pb-4 mb-4'>
             <button type="submit" className="btn btn-success">
               Sign up
             </button>
+            <hr />
             <p>Already registered user go to
               <Link to='/login'>
                 <button
                   type="button"
-                  className="btn btn-outline-warning ml-4"
+                  className="btn btn-outline-warning " style={{marginLeft:"0.4rem"}}
                 >
                   Login
                 </button>
