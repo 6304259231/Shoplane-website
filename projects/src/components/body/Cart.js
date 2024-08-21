@@ -11,6 +11,7 @@ function Cart() {
   const { cartItems, setCartItems, myOrderCartItems, setMyOrderCartItems } = useContext(store);
   const navigate = useNavigate();
 
+  // quantity increment function 
   const handleDecrement = (itemId) => {
     setCartItems((prevCartItems) =>
       prevCartItems.map((cartItem) => {
@@ -25,7 +26,7 @@ function Cart() {
     );
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   };
-
+  // quantity decrement function 
   const handleIncrement = (itemId) => {
     setCartItems((prevCartItems) =>
       prevCartItems.map((cartItem) => {
@@ -42,13 +43,13 @@ function Cart() {
   };
 
   const placeOrderHandler = () => {
-    toast.success('Order Placed successfully');
+    
     let newMyOrderItems = [...myOrderCartItems, ...cartItems];
     setMyOrderCartItems(newMyOrderItems);
     localStorage.setItem('newMyOrderCartItems', JSON.stringify(newMyOrderItems));
     setTimeout(() => {
       localStorage.removeItem('cartItems');
-      navigate('/my-orders');
+      navigate('/orderplaced');
       setCartItems([]);
     }, 1000)
   }
@@ -75,12 +76,7 @@ function Cart() {
     }
   }, []);
 
-  // if (cartItems.length === 0) {
-  //   return <>
-  //     <p className="product-main-head" style={{ textAlign: 'center', fontFamily: 'Rubik', margin: '40px' }}>oops ! <br></br>Your cart is empty.</p>;
-  //   </>
-  // }
-
+ 
   return (
     <>
       <ToastContainer />
@@ -105,7 +101,7 @@ function Cart() {
                     <b className="cart-item-price"> ₹ {item.price}</b>
                     <div className="quantity-controls">
                       <p style={{ fontFamily: 'monospace', fontSize: '20px' }}>Qnty :</p>
-                      <button onClick={() => handleDecrement(item.id)}>-</button>
+                      <button onClick={() => handleDecrement(item.id)} disabled={product.qnty === 1 && true}>-</button>
                       <span>{product.qnty}</span>
                       <button onClick={() => handleIncrement(item.id)}>+</button>
                     </div>
@@ -121,8 +117,11 @@ function Cart() {
         }
       </div>
       <div className="cart-total" style={{}}>
+     {cartItems.length ? 
         <button className='order-btn' data-bs-toggle="modal" data-bs-target="#staticBackdrop"
         >Proceed</button>
+        :"" 
+      }
       </div>
 
       <>
@@ -159,7 +158,7 @@ function Cart() {
                         <div className="cart-item-details">
                           <h3>{item.name}</h3>
                           <p style={{ fontFamily: 'Rubik', fontSize: '20px' }}>{item.brand}</p>
-                          <b className="cart-item-price"> ₹{item.price}</b>
+                          <b className="cart-item-price">₹{item.price}</b>
                         </div>
                       </div>
                     )
