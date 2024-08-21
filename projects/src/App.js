@@ -12,12 +12,13 @@ import Register from './components/header/Register';
 import Login from './components/header/Login';
 import Profile from './components/header/Profile'
 import Myorders from './components/body/Myorders';
+import OrderPlaced from './components/body/OrderPlaced';
 
 export let store = createContext();
 
 function App() {
   const [cartItems , setCartItems] = useState([]);
-  const [userStatus , setUserStatus] = useState(false);
+  const [userStatus , setUserStatus] = useState(true);
   let [myOrderCartItems, setMyOrderCartItems] = useState([]);
 
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/product/:id" element={<Product/>}/>
         <Route path="/my-profile" element={<Profile/>}/>
         <Route path="/my-orders" element={<Myorders/>}/>
+        <Route path='/orderplaced' element={<OrderPlaced/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
